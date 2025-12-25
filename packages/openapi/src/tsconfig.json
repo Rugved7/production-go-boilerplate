@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+
+  "compilerOptions": {
+    // Module and runtime settings
+    "module": "NodeNext",
+    "target": "es2022",
+    "lib": ["es2022"],
+    "moduleDetection": "force",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+
+    // Strictness settings
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+
+    // Output control
+    "outDir": "dist",
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "composite": true,
+
+    // Path and resolution
+    "rootDir": "src",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@boilerplate/zod": ["../zod/src/index.ts"]
+    },
+
+    // Type checking
+    "skipLibCheck": true
+  },
+
+  "references": [
+    { "path": "../../zod/tsconfig.json" }
+  ],
+
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}
